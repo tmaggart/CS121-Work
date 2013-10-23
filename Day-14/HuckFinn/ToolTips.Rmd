@@ -1,0 +1,37 @@
+```{r}
+formatWord <- function(word,translation,class){
+  if (is.na(translation)==TRUE)
+    return(as.character(word))
+  else{
+    paste("<span class=","'",class,"'"," ","title=","'",translation,"'",">",word,"</span>",sep="")
+  }
+}
+```
+Test Solutions:
+```{r}
+formatWord("Hello","hi there!","hiword")
+```
+TelevisionLand
+```{r results='asis'}
+cat(formatWord("Hello","hi there!","hiword"),"to","all","of","you","in",formatWord("Television Land.","TV viewers","hiword"))
+```
+Character Vectors
+```{r}
+words <- c("How","now","brown","cow","1")
+tips <- c("How are you doing?",NA,"Why brown?","bovine","enthusiasm")
+styles <- c("hiword","","brown","blue","hiword")
+```
+Putting it all together
+```{r results='asis'}
+Display <- function(words, tips){
+  words <- c("How","now","brown","cow","1")
+  tips <- c("How are you doing?",NA,"Why brown?","bovine","enthusiasm")
+  for(k in words){
+    cat(formatWord(k))
+  }
+}
+```
+Test
+```{r}
+Display()
+```

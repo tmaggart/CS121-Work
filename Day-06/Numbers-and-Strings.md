@@ -1,0 +1,27 @@
+
+```r
+outlier <- function(x) {
+    qs <- quantile(x, probs = c(0.25, 0.75))
+    width <- 1.5 * (qs[2] - qs[1])
+    top <- width + qs[2]
+    bottom <- qs[1] - width
+    x[(x < bottom) | (x > top)]
+}
+```
+
+
+```r
+EnglishNumbers <- c("zero", "one", "two", "three", "four", "five", "six", "seven", 
+    "eight", "nine")
+
+digitToWord <- function(n, language) {
+    return(language[n + 1])
+}
+
+digitToWord(4, EnglishNumbers)
+```
+
+```
+## [1] "four"
+```
+
