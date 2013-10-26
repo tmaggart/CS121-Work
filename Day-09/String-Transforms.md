@@ -53,7 +53,7 @@ Scrambler("Tom Wakin")
 ```
 
 ```
-## [1] "mi TnWako"
+## [1] "WakoT min"
 ```
 
 ## VowelBleeper
@@ -94,5 +94,82 @@ l33t("I really like dogs because they are adorable")
 
 ```
 ## [1] "I r3411y 1ik3 d0g5 b3c4u53 th3y 4r3 4d0r4b13"
+```
+
+## Sapply
+
+```r
+# Reverser
+Reverser <- function(x) {
+    Reverser <- function(x) {
+        Alpha <- strsplit(x, NULL)
+        Beta <- rev(Alpha[[1]])
+        return(paste(Beta, collapse = ""))
+    }
+    sapply(x, Reverser)
+}
+Reverser(c("dogs", "cats", "balloons"))
+```
+
+```
+##       dogs       cats   balloons 
+##     "sgod"     "stac" "snoollab"
+```
+
+```r
+
+# Scrambler
+Scrambler <- function(x) {
+    Scrambler <- function(x) {
+        Alpha <- strsplit(x, NULL)
+        Beta <- sample(Alpha[[1]])
+        return(paste(Beta, collapse = ""))
+    }
+    sapply(x, Scrambler)
+}
+Scrambler(c("dogs", "cats", "balloons"))
+```
+
+```
+##       dogs       cats   balloons 
+##     "dsog"     "stca" "aonbllos"
+```
+
+```r
+
+# Bleeper
+Bleeper <- function(x) {
+    Bleeper <- function(x) {
+        gsub("[aeiou]", "*", x)
+    }
+    sapply(x, Bleeper)
+}
+Bleeper(c("dogs", "cats", "balloons"))
+```
+
+```
+##       dogs       cats   balloons 
+##     "d*gs"     "c*ts" "b*ll**ns"
+```
+
+```r
+
+# L33t
+l33t <- function(words) {
+    l33t <- function(words) {
+        First <- gsub("[Ee]", "3", words)
+        Second <- gsub("[Aa]", "4", First)
+        Third <- gsub("[Oo]", "0", Second)
+        Fourth <- gsub("[Ll]", "1", Third)
+        gsub("[Ss]", "5", Fourth)
+    }
+    sapply(words, l33t)
+}
+l33t(c("dogs", "cats", "balloons"))
+```
+
+```
+##       dogs       cats   balloons 
+##     "d0g5"     "c4t5" "b41100n5"
 ```
 

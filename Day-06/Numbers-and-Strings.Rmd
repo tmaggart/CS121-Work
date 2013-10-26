@@ -1,3 +1,6 @@
+Numbers and Strings
+=====================
+## Basic Statistics
 ```{r}
 outlier <- function(x){
     qs <- quantile(x,probs=c(0.25,0.75))
@@ -6,7 +9,10 @@ outlier <- function(x){
     bottom <- qs[1] - width
     x[(x<bottom)|(x>top)]
 }
+
+outlier(1:10)
 ```
+## Numbers and Languages
 ```{r}
 EnglishNumbers <- c("zero","one","two","three","four","five","six","seven","eight","nine")
 
@@ -16,3 +22,27 @@ digitToWord <- function(n,language){
 
 digitToWord(4,EnglishNumbers)
 `````````````
+## Help for Crossword Puzzles
+```{r}
+lettersMatch <- function(words,pattern){
+  words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+  analyze <- grepl(pattern,words)
+  return(words[analyze])
+}
+# 7 letter words starting with "b" ending in "ing"
+lettersMatch(words,"^b...ing")
+```
+## Have your pi two ways
+```{r}
+piSeries <- function(n){
+  state <- 0
+  for(k in 1:(length(n))){
+    result <- ((-1)^(k+1))/(2*k-1)
+    state <- state + result
+  }
+  return(state*4)
+}
+
+piSeries(1:10000)
+```
+

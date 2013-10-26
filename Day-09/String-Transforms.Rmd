@@ -57,3 +57,49 @@ Test Statements
 `````{r}
 l33t("I really like dogs because they are adorable")
 `````
+## Sets of Words
+```{r}
+# Reverser
+Reverser <- function(x){
+  Reverser <- function(x){
+    Alpha <- strsplit(x,NULL)
+  Beta <- rev(Alpha[[1]])
+  return(paste(Beta, collapse=""))
+  }
+  sapply(x,Reverser)
+}
+Reverser(c("dogs","cats","balloons"))
+
+# Scrambler
+Scrambler <- function(x){
+  Scrambler <- function(x){
+  Alpha <- strsplit(x,NULL)
+  Beta <- sample(Alpha[[1]])
+  return(paste(Beta, collapse=""))
+  }
+  sapply(x,Scrambler)
+}
+Scrambler(c("dogs","cats","balloons"))
+
+# Bleeper
+Bleeper <- function(x){
+  Bleeper <- function(x){
+  gsub("[aeiou]","*",x)
+  }
+  sapply(x,Bleeper)
+}
+Bleeper(c("dogs","cats","balloons"))
+
+# L33t
+l33t <- function(words){
+  l33t <- function(words){
+  First <- gsub("[Ee]","3",words)
+  Second <- gsub("[Aa]","4",First)
+  Third <- gsub("[Oo]","0",Second)
+  Fourth <- gsub("[Ll]","1",Third)
+  gsub("[Ss]","5",Fourth)
+  }
+  sapply(words,l33t)
+}
+l33t(c("dogs","cats","balloons"))
+```

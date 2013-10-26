@@ -224,7 +224,7 @@ Reverser(&quot;dog&quot;)
 <pre><code class="r">Scrambler(&quot;Tom Wakin&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;mi TnWako&quot;
+<pre><code>## [1] &quot;WakoT min&quot;
 </code></pre>
 
 <h2>VowelBleeper</h2>
@@ -259,6 +259,75 @@ Reverser(&quot;dog&quot;)
 </code></pre>
 
 <pre><code>## [1] &quot;I r3411y 1ik3 d0g5 b3c4u53 th3y 4r3 4d0r4b13&quot;
+</code></pre>
+
+<h2>Sapply</h2>
+
+<pre><code class="r"># Reverser
+Reverser &lt;- function(x) {
+    Reverser &lt;- function(x) {
+        Alpha &lt;- strsplit(x, NULL)
+        Beta &lt;- rev(Alpha[[1]])
+        return(paste(Beta, collapse = &quot;&quot;))
+    }
+    sapply(x, Reverser)
+}
+Reverser(c(&quot;dogs&quot;, &quot;cats&quot;, &quot;balloons&quot;))
+</code></pre>
+
+<pre><code>##       dogs       cats   balloons 
+##     &quot;sgod&quot;     &quot;stac&quot; &quot;snoollab&quot;
+</code></pre>
+
+<pre><code class="r">
+# Scrambler
+Scrambler &lt;- function(x) {
+    Scrambler &lt;- function(x) {
+        Alpha &lt;- strsplit(x, NULL)
+        Beta &lt;- sample(Alpha[[1]])
+        return(paste(Beta, collapse = &quot;&quot;))
+    }
+    sapply(x, Scrambler)
+}
+Scrambler(c(&quot;dogs&quot;, &quot;cats&quot;, &quot;balloons&quot;))
+</code></pre>
+
+<pre><code>##       dogs       cats   balloons 
+##     &quot;dsog&quot;     &quot;stca&quot; &quot;aonbllos&quot;
+</code></pre>
+
+<pre><code class="r">
+# Bleeper
+Bleeper &lt;- function(x) {
+    Bleeper &lt;- function(x) {
+        gsub(&quot;[aeiou]&quot;, &quot;*&quot;, x)
+    }
+    sapply(x, Bleeper)
+}
+Bleeper(c(&quot;dogs&quot;, &quot;cats&quot;, &quot;balloons&quot;))
+</code></pre>
+
+<pre><code>##       dogs       cats   balloons 
+##     &quot;d*gs&quot;     &quot;c*ts&quot; &quot;b*ll**ns&quot;
+</code></pre>
+
+<pre><code class="r">
+# L33t
+l33t &lt;- function(words) {
+    l33t &lt;- function(words) {
+        First &lt;- gsub(&quot;[Ee]&quot;, &quot;3&quot;, words)
+        Second &lt;- gsub(&quot;[Aa]&quot;, &quot;4&quot;, First)
+        Third &lt;- gsub(&quot;[Oo]&quot;, &quot;0&quot;, Second)
+        Fourth &lt;- gsub(&quot;[Ll]&quot;, &quot;1&quot;, Third)
+        gsub(&quot;[Ss]&quot;, &quot;5&quot;, Fourth)
+    }
+    sapply(words, l33t)
+}
+l33t(c(&quot;dogs&quot;, &quot;cats&quot;, &quot;balloons&quot;))
+</code></pre>
+
+<pre><code>##       dogs       cats   balloons 
+##     &quot;d0g5&quot;     &quot;c4t5&quot; &quot;b41100n5&quot;
 </code></pre>
 
 </body>
