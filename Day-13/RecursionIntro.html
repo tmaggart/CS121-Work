@@ -182,6 +182,17 @@ hljs.initHighlightingOnLoad();
 
 <h2>Sum</h2>
 
+<pre><code class="r">nSeq &lt;- function(v) {
+    if (length(v) == 0) 
+        return(0)
+    return(rev(v[1]) + nSeq(rev(v[-1])))
+}
+nSeq(1:10)
+</code></pre>
+
+<pre><code>## [1] 55
+</code></pre>
+
 <pre><code class="r">newaddEm &lt;- function(v) {
     if (length(v) == 0) 
         return(0)

@@ -1,4 +1,5 @@
-# Interacting With Loops
+Interacting With Loops
+==========================
 
 ## Looping a Launch
 
@@ -108,15 +109,14 @@ getData <- function(N) {
 }
 ```
 
-
 ## Resulting Data
 
 ```r
-load("TrevorData.Rdata")
+load("TrevorData.RData")
 ```
 
 ```
-## Warning: cannot open compressed file 'TrevorData.Rdata', probable reason
+## Warning: cannot open compressed file 'TrevorData.RData', probable reason
 ## 'No such file or directory'
 ```
 

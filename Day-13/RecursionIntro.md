@@ -1,6 +1,21 @@
-# Recursion
+Recursion
+=============
 
 ## Sum
+
+```r
+nSeq <- function(v) {
+    if (length(v) == 0) 
+        return(0)
+    return(rev(v[1]) + nSeq(rev(v[-1])))
+}
+nSeq(1:10)
+```
+
+```
+## [1] 55
+```
+
 
 
 ```r

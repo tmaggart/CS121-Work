@@ -37,6 +37,15 @@ The links let you view your files as they appear on GitHub.  To edit and update 
 
 =====================
 
+## Cropping and Framing Images
+
+Where you use indexing and concatenation operations to extract sub-images and to make frames around images.
+* [Assignment](http://dtkaplan.github.io/ScientificComputing/Assignments/ImageCropping.html)
+* Repository Path: <code>Images/ImageCropping.[html | Rmd]</code>
+* Your Files: [view HTML](http://tmaggart.github.io/CS121-Work/Images/ImageCropping.html); [raw Rmd](http://tmaggart.github.io/CS121-Work/Images/ImageCropping.Rmd) 
+
+<a href='http://tmaggart.github.io/CS121-Work/Images/ImageCropping.html'><img class='thumbpage' src='http://img.bitpixels.com/getthumbnail?code=75555&url=tmaggart.github.io/CS121-Work/Images/ImageCropping.html&size=200'></a>
+
 ## Computing Numerical Derivatives
 
 ... in which you use a very simple numerical scheme for computing derivatives and then package it up so that differentiating a function gives back a function.

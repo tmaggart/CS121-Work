@@ -11,11 +11,11 @@ outlier <- function(x) {
     x[(x < bottom) | (x > top)]
 }
 
-outlier(1:10)
+outlier(5)
 ```
 
 ```
-## integer(0)
+## numeric(0)
 ```
 
 ## Numbers and Languages

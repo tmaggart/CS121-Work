@@ -53,14 +53,14 @@ Scrambler("Tom Wakin")
 ```
 
 ```
-## [1] "WakoT min"
+## [1] "TminW ako"
 ```
 
 ## VowelBleeper
 
 ```r
 Bleeper <- function(x) {
-    gsub("[aeiou]", "*", x)
+    gsub("[AEIOUaeiou]", "*", x)
 }
 ```
 
@@ -71,7 +71,7 @@ Bleeper("Is this working")
 ```
 
 ```
-## [1] "Is th*s w*rk*ng"
+## [1] "*s th*s w*rk*ng"
 ```
 
 ## L33T
@@ -96,7 +96,7 @@ l33t("I really like dogs because they are adorable")
 ## [1] "I r3411y 1ik3 d0g5 b3c4u53 th3y 4r3 4d0r4b13"
 ```
 
-## Sapply
+## Sets of Words
 
 ```r
 # Reverser
@@ -132,7 +132,7 @@ Scrambler(c("dogs", "cats", "balloons"))
 
 ```
 ##       dogs       cats   balloons 
-##     "dsog"     "stca" "aonbllos"
+##     "sdog"     "ctsa" "nbollaso"
 ```
 
 ```r

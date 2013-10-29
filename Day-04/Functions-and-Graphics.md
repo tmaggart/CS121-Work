@@ -1,3 +1,5 @@
+Functions and Graphics
+=========================
 
 ```r
 countOdds <- function(x) {

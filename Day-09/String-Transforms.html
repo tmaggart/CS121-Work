@@ -224,13 +224,13 @@ Reverser(&quot;dog&quot;)
 <pre><code class="r">Scrambler(&quot;Tom Wakin&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;WakoT min&quot;
+<pre><code>## [1] &quot;TminW ako&quot;
 </code></pre>
 
 <h2>VowelBleeper</h2>
 
 <pre><code class="r">Bleeper &lt;- function(x) {
-    gsub(&quot;[aeiou]&quot;, &quot;*&quot;, x)
+    gsub(&quot;[AEIOUaeiou]&quot;, &quot;*&quot;, x)
 }
 </code></pre>
 
@@ -239,7 +239,7 @@ Reverser(&quot;dog&quot;)
 <pre><code class="r">Bleeper(&quot;Is this working&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;Is th*s w*rk*ng&quot;
+<pre><code>## [1] &quot;*s th*s w*rk*ng&quot;
 </code></pre>
 
 <h2>L33T</h2>
@@ -261,7 +261,7 @@ Reverser(&quot;dog&quot;)
 <pre><code>## [1] &quot;I r3411y 1ik3 d0g5 b3c4u53 th3y 4r3 4d0r4b13&quot;
 </code></pre>
 
-<h2>Sapply</h2>
+<h2>Sets of Words</h2>
 
 <pre><code class="r"># Reverser
 Reverser &lt;- function(x) {
@@ -293,7 +293,7 @@ Scrambler(c(&quot;dogs&quot;, &quot;cats&quot;, &quot;balloons&quot;))
 </code></pre>
 
 <pre><code>##       dogs       cats   balloons 
-##     &quot;dsog&quot;     &quot;stca&quot; &quot;aonbllos&quot;
+##     &quot;sdog&quot;     &quot;ctsa&quot; &quot;nbollaso&quot;
 </code></pre>
 
 <pre><code class="r">

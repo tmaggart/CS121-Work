@@ -36,7 +36,7 @@ Scrambler("Tom Wakin")
 ## VowelBleeper
 `````{r}
 Bleeper <- function(x){
-  gsub("[aeiou]","*",x)
+  gsub("[AEIOUaeiou]","*",x)
 }
 `````
 Test Statements:

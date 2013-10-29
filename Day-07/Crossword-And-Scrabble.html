@@ -182,6 +182,18 @@ hljs.initHighlightingOnLoad();
 
 <h2>Summarizing the List</h2>
 
+<pre><code class="r">words &lt;- readLines(url(&quot;http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt&quot;))
+
+Length1 &lt;- function(x) {
+    analyze &lt;- grepl(&quot;^.$&quot;, x)
+    return(length(analyze))
+}
+Length1(words)
+</code></pre>
+
+<pre><code>## [1] 113809
+</code></pre>
+
 <h2>Crossword helper</h2>
 
 <pre><code class="r">crossword &lt;- function(expression) {
@@ -194,10 +206,35 @@ hljs.initHighlightingOnLoad();
 crossword(&quot;^b.t$&quot;)
 </code></pre>
 
+<pre><code>## Warning: closing unused connection 5
+## (http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt)
+</code></pre>
+
 <pre><code>## [1] &quot;bat&quot; &quot;bet&quot; &quot;bit&quot; &quot;bot&quot; &quot;but&quot;
 </code></pre>
 
 <h2>A Better Crossword Helper</h2>
+
+<pre><code class="r">crosswordPattern &lt;- function(times) {
+    x &lt;- &quot;.&quot;
+
+    words &lt;- readLines(url(&quot;http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt&quot;))
+
+    expression &lt;- rep(x, times)
+    analyze &lt;- grepl(paste(&quot;^&quot;, expression, &quot;$&quot;, col = &quot;&quot;), words)
+    return(words[analyze])
+}
+crosswordPattern(10)
+</code></pre>
+
+<pre><code>## Warning: argument &#39;pattern&#39; has length &gt; 1 and only the first element will
+## be used
+</code></pre>
+
+<pre><code>## character(0)
+</code></pre>
+
+<h2>Scrabble</h2>
 
 </body>
 

@@ -78,8 +78,7 @@ getData <- function(N){
               return(result)
           }
 ```
-
 ## Resulting Data
 ```{r}
-load("TrevorData.Rdata")
+load("TrevorData.RData")
 ```
