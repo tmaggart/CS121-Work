@@ -19,6 +19,8 @@ formatWord("Hello", "hi there!", "hiword")
 ## [1] "<span class='hiword' title='hi there!'>Hello</span>"
 ```
 
+
+
 TelevisionLand
 
 ```r
@@ -27,6 +29,11 @@ cat(formatWord("Hello", "hi there!", "hiword"), "to", "all", "of", "you", "in",
 ```
 
 <span class='hiword' title='hi there!'>Hello</span> to all of you in <span class='hiword' title='TV viewers'>Television Land.</span>
+
+
+<style>
+.hiword {background:orange;}
+</style>
 
 Character Vectors
 

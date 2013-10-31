@@ -1,5 +1,6 @@
 Functions and Graphics
 =========================
+## Sum of Numbers
 `````````{r}
 countOdds <- function(x){
   sum(x%%2)
@@ -16,7 +17,10 @@ countEven(1:9)
 hypotenuseLength <- function(x,y){
   sqrt(x^2+y^2)
 }
-
+```
+## Triangles
+1. Finding the Hypotenuse Length
+```{r}
 hypotenuseLength(3,4)
 
 lawOfCosines <- function(a,b,theta){
@@ -37,3 +41,6 @@ thetaFromLengthsTest <- function(a,b,theta){
 thetaFromLengthsTest(13,84,0)
 
 ``````````
+## Graphics
+```{r}
+```

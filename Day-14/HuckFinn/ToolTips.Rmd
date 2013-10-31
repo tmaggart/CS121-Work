@@ -11,10 +11,17 @@ Test Solutions:
 ```{r}
 formatWord("Hello","hi there!","hiword")
 ```
+
+
 TelevisionLand
 ```{r results='asis'}
 cat(formatWord("Hello","hi there!","hiword"),"to","all","of","you","in",formatWord("Television Land.","TV viewers","hiword"))
 ```
+
+<style>
+.hiword {background:orange;}
+</style>
+
 Character Vectors
 ```{r}
 words <- c("How","now","brown","cow","1")
