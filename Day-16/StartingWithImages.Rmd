@@ -7,7 +7,16 @@ puppy <- readPNG(getURLContent("http://dtkaplan.github.io/ScientificComputing/Re
 COMP121::canvas(x=c(1,220),y=c(1,220),asp=1)
 graphics::rasterImage(puppy,1,1,216,198)
 ```
-## Taking out a paw
+# Indexing, Cropping, and Expanding Images
+
+## Cropping Tasks
+
+### Mindo's Face
 ```{r}
-puppy[160:200,1:70,]
+require(png)
+require(RCurl)
+puppy <- readPNG(getURLContent("http://dtkaplan.github.io/ScientificComputing/Resources/Images/mindo.png"))
+puppyface <- puppy[100:1120,50:70,]
+COMP121::canvas(x=c(1,220),y=c(1,220),asp=1)
+graphics::rasterImage(puppyface,1,1,216,198)
 ```
