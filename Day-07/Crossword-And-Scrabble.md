@@ -7,14 +7,37 @@ words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/D
 
 Length1 <- function(x) {
     analyze <- grepl("^.$", x)
-    return(length(analyze))
+    return(length(x[analyze]))
 }
 Length1(words)
 ```
 
 ```
-## [1] 113809
+## [1] 0
 ```
+
+```r
+
+Length2 <- function(x) {
+    analyze <- grepl("^..$", x)
+    return(length(x[analyze]))
+}
+Length2(words)
+```
+
+```
+## [1] 85
+```
+
+## 100 longest words
+
+```r
+LongestWords <- function(words) {
+    words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+    list <- c()
+}
+```
+
 
 ## Crossword helper
 
@@ -27,11 +50,6 @@ crossword <- function(expression) {
 
 # Test Solutions
 crossword("^b.t$")
-```
-
-```
-## Warning: closing unused connection 5
-## (http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt)
 ```
 
 ```

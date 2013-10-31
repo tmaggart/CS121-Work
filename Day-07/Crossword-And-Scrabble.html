@@ -186,12 +186,31 @@ hljs.initHighlightingOnLoad();
 
 Length1 &lt;- function(x) {
     analyze &lt;- grepl(&quot;^.$&quot;, x)
-    return(length(analyze))
+    return(length(x[analyze]))
 }
 Length1(words)
 </code></pre>
 
-<pre><code>## [1] 113809
+<pre><code>## [1] 0
+</code></pre>
+
+<pre><code class="r">
+Length2 &lt;- function(x) {
+    analyze &lt;- grepl(&quot;^..$&quot;, x)
+    return(length(x[analyze]))
+}
+Length2(words)
+</code></pre>
+
+<pre><code>## [1] 85
+</code></pre>
+
+<h2>100 longest words</h2>
+
+<pre><code class="r">LongestWords &lt;- function(words) {
+    words &lt;- readLines(url(&quot;http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt&quot;))
+    list &lt;- c()
+}
 </code></pre>
 
 <h2>Crossword helper</h2>
@@ -204,10 +223,6 @@ Length1(words)
 
 # Test Solutions
 crossword(&quot;^b.t$&quot;)
-</code></pre>
-
-<pre><code>## Warning: closing unused connection 5
-## (http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt)
 </code></pre>
 
 <pre><code>## [1] &quot;bat&quot; &quot;bet&quot; &quot;bit&quot; &quot;bot&quot; &quot;but&quot;
