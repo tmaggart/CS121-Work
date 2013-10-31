@@ -35,24 +35,21 @@ graphics::rasterImage(puppy, 1, 1, 216, 198)
 require(png)
 require(RCurl)
 puppy <- readPNG(getURLContent("http://dtkaplan.github.io/ScientificComputing/Resources/Images/mindo.png"))
-puppyface <- puppy[100:1120, 50:70, ]
-```
-
-```
-## Error: subscript out of bounds
-```
-
-```r
+puppyface <- puppy[1:120, 85:215, ]
 COMP121::canvas(x = c(1, 220), y = c(1, 220), asp = 1)
+graphics::rasterImage(puppyface, 1, 1, 215, 120)
 ```
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
 
+
+### Mindo's Left Front Paw
+
 ```r
-graphics::rasterImage(puppyface, 1, 1, 216, 198)
+puppypaw <- puppy[155:195, 1:60, ]
+COMP121::canvas(x = c(1, 220), y = c(1, 220), asp = 1)
+graphics::rasterImage(puppypaw, 1, 1, 60, 195)
 ```
 
-```
-## Error: object 'puppyface' not found
-```
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
