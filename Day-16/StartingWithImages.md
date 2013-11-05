@@ -53,3 +53,22 @@ graphics::rasterImage(puppypaw, 1, 1, 60, 195)
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
+
+### Mindo's Dog Tag
+
+```r
+puppydogtags <- puppy[120:145, 95:140, ]
+COMP121::canvas(x = c(1, 220), y = c(1, 220), asp = 1)
+graphics::rasterImage(puppydogtags, 1, 1, 60, 195)
+```
+
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+
+
+### Intial Frame Tasking
+
+```r
+FrameImage <- function(image, FrameWidth) {
+    
+}
+```

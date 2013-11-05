@@ -117,4 +117,32 @@ circle(50, 60, 8, col = "white", border = NULL)
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
 
+
+
+```r
+## Overlapping Circles
+
+
+canvas()
+circle(40, 40, 20, col = "green", border = "blue", lwd = 5)
+circle(60, 60, 20, col = "tomato", border = "green", lwd = 10)
+circle(50, 50, 10, col = "yellow", border = "black", lwd = 3)
 ```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-51.png) 
+
+```r
+
+
+## Olympic Rings
+
+
+canvas()
+circle(50, 60, 10, col = "NA", border = "black", lwd = 6)
+circle(28, 60, 10, col = "NA", border = "blue", lwd = 6)
+circle(72, 60, 10, col = "NA", border = "red", lwd = 6)
+circle(39, 47, 10, col = "NA", border = "yellow", lwd = 6)
+circle(61, 47, 10, col = "NA", border = "green", lwd = 6)
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-52.png) 

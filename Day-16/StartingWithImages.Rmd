@@ -27,3 +27,18 @@ puppypaw <- puppy[155:195,1:60,]
 COMP121::canvas(x=c(1,220),y=c(1,220),asp=1)
 graphics::rasterImage(puppypaw,1,1,60,195)
 ```
+
+### Mindo's Dog Tag
+```{r}
+puppydogtags <- puppy[120:145,95:140,]
+COMP121::canvas(x=c(1,220),y=c(1,220),asp=1)
+graphics::rasterImage(puppydogtags,1,1,60,195)
+```
+
+### Intial Frame Tasking
+```{r}
+FrameImage <- function(image,FrameWidth){
+  all4 <- rbind( framed[rev(1:20),], framed, framed[rev(179:198),])
+  canvas(x=c(1,40+216),y=c(1,40+198), asp=1)
+  rasterImage(all4, 1, 1, 40+216, 40+198)
+}
