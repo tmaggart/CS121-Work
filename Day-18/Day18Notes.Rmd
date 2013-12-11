@@ -1,0 +1,11 @@
+Day 18 Notes
+=================
+Gui
+  -manipulate
+  -shiny
+    -trees R---->Html
+  
+Data & Graphics
+  -database operation
+  -machine
+  -graphics -----> maps,etc. 

@@ -1,0 +1,28 @@
+COMP 121 Programming Task Trevor Maggart
+===========================
+## Available Read-Ins
+```{r}
+require(mosaic)
+finalData <- fetchData("COMP121/word-hints.R")
+```
+## Letter Proportion Function
+```{r}
+letterProportion <- function(string){
+  lstring <- tolower(string)
+  letters <- unlist(strsplit(lstring,NULL))
+  letters2 <- letters[letters %in% c()]
+}
+
+letterProportionOutput <- letterProportion()
+```
+## Frequence Compare Function
+```{r}
+freqCompare <- function(letterProportionOutput,English){
+  alpha <- (English)
+  if length(letterProportionOutput)==0
+  for (in alpha)
+}
+```
+## Which Language Function
+```{r}
+```
