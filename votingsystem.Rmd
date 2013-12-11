@@ -1,0 +1,7 @@
+Voting System
+=====================
+is.majority(votes) <- name, # of votes, total votes
+              
+what.percentage(votes) <- name, # of votes, percent votes
+
+counts <- mutate(counts, Perc=Freq/80101)
