@@ -1,0 +1,38 @@
+Data Wrangling Task: Grades
+===========================
+```{r}
+require(mosaic)
+require(plyr)
+require(reshape2)
+grades <- fetchData("grades.csv")
+gp <- fetchData("grade-to-number.csv")
+courses <- fetchData("courses.csv")
+both <- join(grades,gp)
+with(both,table(gradepoint,grade))
+ddply(both,~grade,summarize,mean(gradepoint),var=sd(gradepoint))
+perStudent <- ddply(both,~sid,summarize,gpa=mean(gradepoint),med=median(gradepoint))
+head(mutate(perStudent,skew=gpa>med))
+vacations <- subset(lowest,min<=2)
+nrow(vacations)
+```
+summarize
+nrow() head()
+ncol() names()
+```{r}
+require(mosaic)
+require(plyr)
+require(reshape2)
+grades <- fetchData("grades.csv")
+gp <- fetchData("grade-to-number.csv")
+courses <- fetchData("courses.csv")
+majors <- join(courses,grades)
+department <- with(Tomechick,table(dept))
+majorsfreq <- function(v){
+  T <- table(v)
+  Ind <- which.max(T)
+  name(T)[Ind]
+}
+
+ddply(majors,~sid,summarize,mj=max(dept))
+
+
