@@ -4,18 +4,22 @@ Numbers and Strings
 
 ```r
 outlier <- function(x) {
-    qs <- quantile(x, probs = c(0.25, 0.75))
-    width <- 1.5 * (qs[2] - qs[1])
-    top <- width + qs[2]
-    bottom <- qs[1] - width
-    x[(x < bottom) | (x > top)]
+    q <- quantile(x, probs = c(0.25, 0.75))
+    width <- 1.5 * (q[[2]] - q[[1]])
+    high <- width + q[[2]]
+    low <- q[[1]] - width
+    out <- c()
+    for (k in 1:length(x)) {
+        out <- c(out, x[k] > high | x[k] < low)
+    }
+    return(out)
 }
 
 outlier(5)
 ```
 
 ```
-## numeric(0)
+## [1] FALSE
 ```
 
 ## Numbers and Languages

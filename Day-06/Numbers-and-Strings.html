@@ -183,17 +183,21 @@ hljs.initHighlightingOnLoad();
 <h2>Basic Statistics</h2>
 
 <pre><code class="r">outlier &lt;- function(x) {
-    qs &lt;- quantile(x, probs = c(0.25, 0.75))
-    width &lt;- 1.5 * (qs[2] - qs[1])
-    top &lt;- width + qs[2]
-    bottom &lt;- qs[1] - width
-    x[(x &lt; bottom) | (x &gt; top)]
+    q &lt;- quantile(x, probs = c(0.25, 0.75))
+    width &lt;- 1.5 * (q[[2]] - q[[1]])
+    high &lt;- width + q[[2]]
+    low &lt;- q[[1]] - width
+    out &lt;- c()
+    for (k in 1:length(x)) {
+        out &lt;- c(out, x[k] &gt; high | x[k] &lt; low)
+    }
+    return(out)
 }
 
 outlier(5)
 </code></pre>
 
-<pre><code>## numeric(0)
+<pre><code>## [1] FALSE
 </code></pre>
 
 <h2>Numbers and Languages</h2>
