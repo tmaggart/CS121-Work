@@ -1,2 +1,63 @@
 Substitution Cypher
 =======================
+## Making the Key
+
+```r
+theKey <- function(word) {
+    key <- unlist(strsplit(tolower(word), NULL))
+    result <- character(0)
+    for (k in 1:length(key)) {
+        number <- which(key[k] == letters)
+        result <- c(result, number)
+    }
+    result <- paste(result, collapse = "")
+    return(as.numeric(result))
+}
+## Test Statement
+theKey("benjamin")
+```
+
+```
+## [1] 2.514e+11
+```
+
+## Making the Cypher
+
+```r
+encryption <- function(keyword, words) {
+    set <- c(letters, LETTERS, "?", "!", ".", ",", "", "()")
+    set.seed(theKey(keyword))
+    encrypt <- sample(set)
+    open <- paste(set, collapse = "")
+    close <- paste(encrypt, collapse = "")
+    telegram <- chartr(open, close, words)
+    return(telegram)
+}
+## Test Statement
+encryption("dog", "I like dogs")
+```
+
+```
+## [1] "J hDRs ATl)"
+```
+
+## Making the Decryption Function
+
+```r
+decryption <- function(keyword, words) {
+    set <- c(letters, LETTERS, "?", "!", ".", ",", "", "()")
+    set.seed(theKey(keyword))
+    encrypt <- sample(set)
+    open <- paste(set, collapse = "")
+    close <- paste(encrypt, collapse = "")
+    telegram <- chartr(close, open, words)
+    return(telegram)
+}
+## Test Statement
+decryption("dog", "J hDRs ATl")
+```
+
+```
+## [1] "I like dog"
+```
+

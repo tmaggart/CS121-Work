@@ -1,7 +1,45 @@
 Substitution Cypher
 =======================
+## Making the Key
 ```{r}
-Key <- c("a"=1,"b"=2,"c"=3,"d"=4,"e"=6,"f"=7,"g"=8)
-cipher <- function(word){
-  
+theKey <- function(word) {
+    key <- unlist(strsplit(tolower(word), NULL))
+    result <- character(0)
+    for (k in 1:length(key)) {
+        number <- which(key[k] == letters)
+        result <- c(result, number)
+    }
+    result <- paste(result, collapse = "")
+    return(as.numeric(result))
 }
+## Test Statement
+theKey("benjamin")
+```
+## Making the Cypher
+```{r}
+encryption <- function(keyword,words){
+  set <- c(letters,LETTERS,"?","!",".",",","","()")
+  set.seed(theKey(keyword))
+  encrypt <- sample(set)
+  open <- paste(set,collapse="")
+  close <- paste(encrypt,collapse="")
+  telegram <- chartr(open,close,words)
+  return(telegram)
+}
+## Test Statement
+encryption("dog","I like dogs")
+```
+## Making the Decryption Function
+```{r}
+decryption <- function(keyword,words){
+   set <- c(letters,LETTERS,"?","!",".",",","","()")
+  set.seed(theKey(keyword))
+  encrypt <- sample(set)
+  open <- paste(set,collapse="")
+  close <- paste(encrypt,collapse="")
+  telegram <- chartr(close,open,words)
+  return(telegram)
+}
+## Test Statement
+decryption("dog","J hDRs ATl")
+```
