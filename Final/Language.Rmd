@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 COMP 121 Programming Task Trevor Maggart a.k.a I don't know what I'm doing 
+=======
+COMP 121 Programming Task Trevor Maggart
+>>>>>>> 7430e6f300660714f96d869f70a2587337bf0fcd
 ===========================
 ## Available Read-Ins
 ```{r}
@@ -21,13 +25,19 @@ freqCompare <- function(letterProportionOutput,English){
   alpha <- (English)
   if length(letterProportionOutput)==0
   for (in alpha)
+<<<<<<< HEAD
   
   chisq <- 
+=======
+>>>>>>> 7430e6f300660714f96d869f70a2587337bf0fcd
 }
 ```
 ## Which Language Function
 ```{r}
+<<<<<<< HEAD
 whichLanguage <- function(string,frequences){
   
 }
+=======
+>>>>>>> 7430e6f300660714f96d869f70a2587337bf0fcd
 ```
